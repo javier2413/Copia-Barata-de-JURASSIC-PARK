@@ -5052,6 +5052,11 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &958435124 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4824033923600726677, guid: 3944e3199344e7643b7d6f123e8a5777, type: 3}
+  m_PrefabInstance: {fileID: 7156947100291137779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &958544278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12483,7 +12488,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4824033923600726677, guid: 3944e3199344e7643b7d6f123e8a5777, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8920941342222354042}
   m_SourcePrefab: {fileID: 100100000, guid: 3944e3199344e7643b7d6f123e8a5777, type: 3}
 --- !u!1 &7177779029013888667 stripped
 GameObject:
@@ -13013,6 +13021,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2637082949893208884, guid: 3944e3199344e7643b7d6f123e8a5777, type: 3}
   m_PrefabInstance: {fileID: 7156947100291137779}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8920941342222354042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958435124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0e7ac5011b12741be5292981aeea3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxStamina: 100
+  currentStamina: 0
+  staminaDrainRate: 20
+  staminaRecoveryRate: 15
+  recoveryDelay: 1
 --- !u!1001 &9046310904415328939
 PrefabInstance:
   m_ObjectHideFlags: 0

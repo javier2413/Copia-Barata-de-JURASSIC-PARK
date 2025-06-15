@@ -51,11 +51,14 @@ public class PlayerController : MonoBehaviour
     private PlayerAnimations playerAnimations;
     private PlayerHealth playerHealth;
 
+    private StaminaSystem staminaSystem;
+
     private void Start()
     {
         playerAnimations = GetComponent<PlayerAnimations>();
         playerAnimations.ResetRigWeights();
         playerHealth = GetComponent<PlayerHealth>();
+        staminaSystem = GetComponent<StaminaSystem>();
     }
 
     private void Update()
@@ -98,10 +101,14 @@ public class PlayerController : MonoBehaviour
         if (isKnifeAiming || isPistolAiming)
         {
             isRunning = false;
+            staminaSystem.SetDraining(false);
         }
         else
         {
-            isRunning = (InputManager.instance.RunningValue > 0) && (Mathf.Abs(moveZ) > 0f || Mathf.Abs(moveX) > 0f);
+            bool wantsToRun = (InputManager.instance.RunningValue > 0) && (Mathf.Abs(moveZ) > 0f || Mathf.Abs(moveX) > 0f);
+            isRunning = wantsToRun && staminaSystem.HasStamina();
+
+            staminaSystem.SetDraining(isRunning);
         }
 
         playerAnimations.SetMovementParameters(moveX, moveZ);
