@@ -53,6 +53,8 @@ public class PlayerController : MonoBehaviour
 
     private StaminaSystem staminaSystem;
 
+
+
     private void Start()
     {
         playerAnimations = GetComponent<PlayerAnimations>();

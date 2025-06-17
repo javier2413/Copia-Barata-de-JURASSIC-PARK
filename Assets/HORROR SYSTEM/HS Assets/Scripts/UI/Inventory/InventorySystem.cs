@@ -31,11 +31,26 @@ public class InventorySystem : MonoBehaviour
     [Header("Spawn Point")]
     public Transform spawnPoint;
 
+
+    [System.Serializable]
+    public class InventorySaveData
+    {
+        public List<ItemSaveData> items = new List<ItemSaveData>();
+    }
+
+    [System.Serializable]
+    public class ItemSaveData
+    {
+        public string itemId;
+        public int count;
+    }
+
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject); // Esto mantiene el objeto entre escenas
         }
         else
         {
@@ -47,6 +62,7 @@ public class InventorySystem : MonoBehaviour
     private void Start()
     {
         InitializeSlots();
+        LoadInventory();
     }
 
     private void InitializeSlots()
@@ -85,6 +101,69 @@ public class InventorySystem : MonoBehaviour
             }
         });
     }
+
+
+
+    public void SaveInventory()
+    {
+        var saveData = new InventorySaveData();
+
+        foreach (var slot in slots)
+        {
+            var inventoryItem = slot.GetComponentInChildren<InventoryItem>();
+            if (inventoryItem != null)
+            {
+                var interactiveItem = inventoryItem.GetInteractiveItem();
+                if (interactiveItem != null && interactiveItem.count > 0)
+                {
+                    saveData.items.Add(new ItemSaveData()
+                    {
+                        itemId = inventoryItem.itemId,
+                        count = interactiveItem.count
+                    });
+                }
+            }
+        }
+
+        string json = JsonUtility.ToJson(saveData);
+        PlayerPrefs.SetString("SavedInventory", json);
+        PlayerPrefs.Save();
+        Debug.Log("Inventario guardado");
+    }
+
+
+    public void LoadInventory()
+    {
+        string json = PlayerPrefs.GetString("SavedInventory", "");
+        if (string.IsNullOrEmpty(json)) return;
+
+        var saveData = JsonUtility.FromJson<InventorySaveData>(json);
+        if (saveData == null || saveData.items == null) return;
+
+        // Limpia inventario actual
+        foreach (var slot in slots)
+        {
+            var item = slot.GetComponentInChildren<InventoryItem>();
+            if (item != null)
+            {
+                Destroy(item.gameObject);
+            }
+        }
+
+        foreach (var itemData in saveData.items)
+        {
+            var item = itemDatabase.GetItem(itemData.itemId);
+            if (item != null)
+            {
+                var interactiveItem = new InteractiveItem();
+                interactiveItem.count = itemData.count;
+                AddItem(item.id, itemData.count, interactiveItem);
+            }
+        }
+
+        UpdateInventoryUI();
+    }
+
 
     public bool AddItem(string itemId, int amountToAdd, InteractiveItem interactiveItem)
     {

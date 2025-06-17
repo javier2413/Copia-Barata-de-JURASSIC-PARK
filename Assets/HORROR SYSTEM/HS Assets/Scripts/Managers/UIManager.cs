@@ -32,6 +32,8 @@ public class UIManager : MonoBehaviour
     private bool wasNotePanelActiveBeforePause;
     private bool wasInventoryPanelActiveBeforePause;
 
+    
+
     private void Awake()
     {
         if (instance == null)

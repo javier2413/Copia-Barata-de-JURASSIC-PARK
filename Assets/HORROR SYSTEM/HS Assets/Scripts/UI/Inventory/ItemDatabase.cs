@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-[CreateAssetMenu(fileName = "ItemDatabase", menuName = "Inventory/Item Database")]
+[CreateAssetMenu(fileName = "InventoryData", menuName = "Inventory/Inventory Data")]
 public class ItemDatabase : ScriptableObject
 {
     public List<Item> items = new();
@@ -38,3 +38,4 @@ public class ItemDatabase : ScriptableObject
         KEY
     }
 }
+
