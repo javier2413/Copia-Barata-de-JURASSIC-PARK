@@ -143,4 +143,28 @@ public class EnemyController : MonoBehaviour
     {
         enemySound.Stop();
     }
+
+    [Header("Hearing Settings")]
+    public float hearingRange = 10f;
+
+    // Llamado por cualquier sonido en el mundo (disparos, pasos fuertes, etc.)
+    public void HearSound(Vector3 soundPosition, float volume)
+    {
+        if (enemyHealth.IsEnemyDead()) return;
+
+        float distanceToSound = Vector3.Distance(transform.position, soundPosition);
+        if (distanceToSound <= hearingRange * volume)
+        {
+            target = null; // No atacar de inmediato, solo ir a investigar
+            navAgent.isStopped = false;
+            navAgent.SetDestination(soundPosition);
+            enemyAnimations.Walk();
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, hearingRange);
+    }
 }
