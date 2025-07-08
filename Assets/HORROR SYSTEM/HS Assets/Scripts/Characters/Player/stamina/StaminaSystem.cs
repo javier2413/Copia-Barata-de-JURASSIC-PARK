@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class StaminaSystem : MonoBehaviour
 {
@@ -14,9 +16,13 @@ public class StaminaSystem : MonoBehaviour
     private bool isDraining = false;
     private float recoveryTimer;
 
+    public Slider staminaBar;
+
     private void Awake()
     {
         currentStamina = maxStamina;
+
+       
     }
 
     private void Update()
@@ -36,6 +42,10 @@ public class StaminaSystem : MonoBehaviour
                 currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina);
             }
         }
+
+      
+      
+
     }
 
     public void SetDraining(bool state)

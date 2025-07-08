@@ -123,4 +123,9 @@ public class PlayerAnimations : MonoBehaviour
     {
         rig.weight = weight;
     }
+
+    public void SetThrow()
+    {
+        playerAnimator.SetTrigger("Throw");
+    }
 }

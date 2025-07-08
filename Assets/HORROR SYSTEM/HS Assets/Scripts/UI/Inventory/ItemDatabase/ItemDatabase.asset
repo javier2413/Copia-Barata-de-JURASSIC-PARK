@@ -18,7 +18,6 @@ MonoBehaviour:
       illuminating dark areas, providing essential visibility in low-light conditions.'
     id: 1
     itemSprite: {fileID: 21300000, guid: 78be75676997d66498b888186f382936, type: 3}
-    actions: 
     type: 1
     prefab: {fileID: 3302654606418859149, guid: f9aef83ed5a9b8f44ac14530396d48b2, type: 3}
   - itemName: Battery
@@ -26,7 +25,6 @@ MonoBehaviour:
       Essential for activating the light.  Ensures extended operation of the flashlight.'
     id: 2
     itemSprite: {fileID: 21300000, guid: e7ef11d8fadd1234b8e1451294c1cf01, type: 3}
-    actions: 
     type: 0
     prefab: {fileID: 7107896072025025231, guid: e65c7a2cf4937dc4485dcdee4c5223c8, type: 3}
   - itemName: AmmoBox
@@ -35,7 +33,6 @@ MonoBehaviour:
       ammo for effective fire.'
     id: 3
     itemSprite: {fileID: 21300000, guid: 3211a899e0a4a094f9188114da96ac2a, type: 3}
-    actions: 
     type: 2
     prefab: {fileID: 238936004576712483, guid: 51eca89b2ec19344a9aee872f08cee86, type: 3}
   - itemName: MedKit
@@ -44,7 +41,6 @@ MonoBehaviour:
       A valuable tool for providing field first aid.'
     id: 4
     itemSprite: {fileID: 21300000, guid: 34fd8e1a5913af346954de29119e88cf, type: 3}
-    actions: 
     type: 4
     prefab: {fileID: 2324495153282601300, guid: f05a18bacdc35f842a90beada93fda70, type: 3}
   - itemName: Knife
@@ -53,7 +49,6 @@ MonoBehaviour:
       tool for field situations.'
     id: 5
     itemSprite: {fileID: 21300000, guid: 855c5a8b0cb4e0b4c803f8d310ffa7c1, type: 3}
-    actions: 
     type: 3
     prefab: {fileID: 7895514283889580898, guid: 9a0872cd23344bc41a7ece98729f15fb, type: 3}
   - itemName: Pistol
@@ -62,27 +57,30 @@ MonoBehaviour:
       both shooting and self-defense.'
     id: 6
     itemSprite: {fileID: 21300000, guid: ee7636f31c92c2441b7888c3ba79c795, type: 3}
-    actions: 
     type: 5
     prefab: {fileID: 5307951474645031108, guid: 5d16bbe4142c8844b80521c21426d9c4, type: 3}
   - itemName: KeyBlue
     description: 'Blue Door Key: A metal key required for opening the blue door'
     id: 7
     itemSprite: {fileID: 21300000, guid: 0e0b0c6f486c9de40910769f0a0f293b, type: 3}
-    actions: 
     type: 6
     prefab: {fileID: 4587572685054354086, guid: b5a05285f6041054abd96a14fc658f15, type: 3}
   - itemName: KeyGreen
     description: 'Green Door Key: A metal key required for opening the green door.'
     id: 8
     itemSprite: {fileID: 21300000, guid: b5438c546f8a62e4298fd0ca0ce7b834, type: 3}
-    actions: 
     type: 6
     prefab: {fileID: 930104783014048497, guid: 1471e426f2bdc4042a97114e2059415b, type: 3}
   - itemName: KeyRed
     description: 'Red Door Key: A metal key required for opening the red door.'
     id: 9
     itemSprite: {fileID: 21300000, guid: 051911fa870362a4aa25a6e237b468cb, type: 3}
-    actions: 
     type: 6
     prefab: {fileID: 8996728929938807933, guid: 9439f9683a7f26c45a3f033834cf5c20, type: 3}
+  - itemName: Throwing Stone
+    description: 'Throwing Stone: A small rock used to create noise and distract
+      nearby enemies.'
+    id: 10
+    itemSprite: {fileID: 21300000, guid: 051911fa870362a4aa25a6e237b468cb, type: 3}
+    type: 7
+    prefab: {fileID: 1811722254557714517, guid: 5b954a365867b324682d5c759fed78fb, type: 3}
