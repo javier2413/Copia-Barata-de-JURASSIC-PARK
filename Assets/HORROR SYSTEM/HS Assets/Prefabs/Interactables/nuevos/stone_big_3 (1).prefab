@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactSound: {fileID: 8300000, guid: 7266ccc32604a994bb0ad50ab189cad4, type: 3}
   minImpactVelocity: 1
+  detectionRadius: 10.27
 --- !u!82 &-5557382858055944147
 AudioSource:
   m_ObjectHideFlags: 0
