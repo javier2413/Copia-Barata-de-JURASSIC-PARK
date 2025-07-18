@@ -1,0 +1,34 @@
+{
+  "quests": [
+    {
+      "id": "conocer_controles",
+      "title": "Conoce los controles",
+      "description": "Muévete con W, A, S y D para familiarizarte con los controles del juego.",
+      "isCompleted": false
+    },
+    {
+      "id": "abrir_inventario",
+      "title": "Revisa tu inventario",
+      "description": "Presiona la tecla 'I' para abrir tu inventario.",
+      "isCompleted": false
+    },
+    {
+      "id": "lanzar_piedra",
+      "title": "Lanza una piedra",
+      "description": "Presiona la tecla 'G' para lanzar una piedra y distraer a los enemigos.",
+      "isCompleted": false
+    },
+    {
+      "id": "buscar_salida",
+      "title": "Busca una ruta de salida",
+      "description": "Interactúa con la puerta cerrada. Necesitarás encontrar una llave para poder salir.",
+      "isCompleted": false
+    },
+    {
+      "id": "escapar_lugar",
+      "title": "Escapa del lugar",
+      "description": "Usa la llave para abrir la puerta de salida. Interactúa con ella para escapar y avanzar a la siguiente escena.",
+      "isCompleted": false
+    }
+  ]
+}

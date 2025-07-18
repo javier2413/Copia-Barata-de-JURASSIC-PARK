@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -32,7 +33,10 @@ public class UIManager : MonoBehaviour
     private bool wasNotePanelActiveBeforePause;
     private bool wasInventoryPanelActiveBeforePause;
 
+
     
+
+
 
     private void Awake()
     {

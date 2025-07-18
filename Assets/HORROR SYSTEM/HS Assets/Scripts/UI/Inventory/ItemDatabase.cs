@@ -35,7 +35,8 @@ public class ItemDatabase : ScriptableObject
         KNIFE,
         MEDKIT,
         PISTOL,
-        KEY
+        KEY,
+        DISTRACTION
     }
 }
 
