@@ -34,9 +34,46 @@ public class UIManager : MonoBehaviour
     private bool wasInventoryPanelActiveBeforePause;
 
 
-    
+    [Header("Notas - Lista y Lectura")]
+    public GameObject noteListPanel;
+    public Transform noteListContainer;
+    public GameObject noteButtonPrefab;
+    public TMP_Text noteTitleText;
+    public TMP_Text noteBodyText;
+    public Image noteImage;
 
 
+
+    public void ShowNote(NoteData note)
+    {
+        SetNotePanelActive(); // Activa el panel
+        noteTitleText.text = note.noteTitle;
+        noteBodyText.text = note.noteText;
+        noteImage.sprite = note.noteImage;
+        noteImage.gameObject.SetActive(note.noteImage != null);
+    }
+
+    public void OpenNoteList()
+    {
+        noteListPanel.SetActive(true);
+
+        // Limpiar lista anterior
+        foreach (Transform child in noteListContainer)
+            Destroy(child.gameObject);
+
+        // Crear botón por cada nota
+        foreach (var note in NoteManager.instance.GetAllNotes())
+        {
+            GameObject btn = Instantiate(noteButtonPrefab, noteListContainer);
+            btn.GetComponentInChildren<TMP_Text>().text = note.noteTitle;
+            btn.GetComponent<Button>().onClick.AddListener(() => ShowNote(note));
+        }
+    }
+
+    public void CloseNoteList()
+    {
+        noteListPanel.SetActive(false);
+    }
 
     private void Awake()
     {
